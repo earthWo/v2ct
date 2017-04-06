@@ -5,7 +5,8 @@
 import React ,{Component} from 'react';
 
 import {
-    Navigator
+    Navigator,
+    Platform
 }from 'react-native';
 
 import Scene from '../scene/NewScene'
@@ -15,7 +16,9 @@ export default class Navigation extends Component{
 
 
     componentDidMount() {
-        SplashScreen.dismiss();
+        if(Platform.OS=="android"){
+            SplashScreen.dismiss();
+        }
     }
 
     render(){
